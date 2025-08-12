@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-title-key="blog.title">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵境 - 博客文章</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Baloo+2:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 手绘装饰元素 -->
+    <div class="decorations">
+        <div class="star star-1">✨</div>
+        <div class="star star-2">⭐</div>
+        <div class="star star-3">💫</div>
+        <div class="doodle doodle-1">~</div>
+        <div class="doodle doodle-2">♪</div>
+        <div class="doodle doodle-3">♫</div>
+        <div class="cloud cloud-1">☁️</div>
+        <div class="cloud cloud-2">☁️</div>
+    </div>
+    <!-- 1. 顶部导航栏 -->
+    <div class="header">
+        <!-- 左上角导航按钮 -->
+        <button class="menu-button" id="menuButton">☰</button>
+        
+        <!-- 轮换字幕 -->
+        <div class="rotating-text">
+            <span class="active">"165465"</span>
+            <span>"灵境理解我的每一个想法"</span>
+        </div>
+        
+        <!-- 语言切换按钮 -->
+        <div class="language-switcher">
+            <button class="lang-btn" id="langSwitcher">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text" id="currentLang">中文</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- 侧边导航菜单 -->
+    <div class="menu-overlay" id="menuOverlay">
+        <!-- 关闭按钮 -->
+        <button class="close-menu" id="closeMenu">✕</button>
+        
+        <ul class="menu-items">
+            <li><a href="../../index.html" data-i18n="nav.home">首页</a></li>
+            <li><a href="#" data-i18n="nav.download">下载灵境</a></li>
+            <li><a href="index.html" data-i18n="nav.blog">博客</a></li>
+            <li><a href="../about.html" data-i18n="nav.about">关于灵境</a></li>
+            <li><a href="../faq.html" data-i18n="nav.faq">常见问题</a></li>
+            <li><a href="../careers.html" data-i18n="nav.careers">职业</a></li>
+            <li><a href="../contact.html" data-i18n="nav.contact">联系我们</a></li>
+            <li><a href="#" data-i18n="nav.wechat">微信</a></li>
+            <li><a href="#" data-i18n="nav.douyin">抖音</a></li>
+        </ul>
+    </div>
+    
+    <div class="content-wrapper">
+        <!-- 博客文章内容 -->
+        <div class="post-container">
+            <a href="index.html" class="back-button" data-i18n="blog.back_to_all">← 返回所有文章</a>
+            
+            <div class="post-header">
+                <h1 class="post-title">*****************************************************</h1>
+                <div class="post-meta">
+                    <span>2月15日, 2025</span>
+                    <span><span data-i18n="blog.author_prefix">作者: </span>*****************************************************</span>
+                </div>
+            </div>
+            
+            <div class="post-content">
+                <p>
+                    *****************************************************
+                    *****************************************************
+                </p>
+                
+                <div class="post-image" style="background-color: #84fab0;"></div>
+                
+                <p>
+                    *****************************************************
+                    *****************************************************
+                </p>
+                
+                <p>
+                    *****************************************************
+                    *****************************************************
+                </p>
+            </div>
+            
+            <!-- 更多文章 -->
+            <div class="more-posts">
+                <h2 class="more-posts-title" data-i18n="blog.more_posts">更多文章</h2>
+                
+                <div class="blog-cards">
+                    <!-- 推荐文章1 -->
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <div class="blog-date">2月26日, 2025</div>
+                            <div class="blog-author"><span data-i18n="blog.author_prefix">作者: </span>*****************************************************</div>
+                            <h2 class="blog-card-title"><a href="post-1.html">*****************************************************</a></h2>
+                            <div class="blog-excerpt">
+                                *****************************************************
+                                *****************************************************
+                            </div>
+                            <a href="post-1.html" class="read-more" data-i18n="blog.read_more">阅读更多</a>
+                        </div>
+                        <div class="blog-image" style="background-color: #a18cd1;"></div>
+                    </div>
+                    
+                    <!-- 推荐文章2 -->
+                    <div class="blog-card">
+                        <div class="blog-content">
+                            <div class="blog-date">2月20日, 2025</div>
+                            <div class="blog-author"><span data-i18n="blog.author_prefix">作者: </span>*****************************************************</div>
+                            <h2 class="blog-card-title"><a href="post-2.html">*****************************************************</a></h2>
+                            <div class="blog-excerpt">
+                                *****************************************************
+                                *****************************************************
+                            </div>
+                            <a href="post-2.html" class="read-more">阅读更多</a>
+                        </div>
+                        <div class="blog-image" style="background-color: #fad0c4;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 底部区域 -->
+    <div class="footer">
+        <div class="footer-logo">Portola</div>
+        <div class="social-links">
+            <a href="#" data-i18n="footer.discord">不和</a>
+            <a href="#" data-i18n="footer.instagram">Instagram</a>
+            <a href="#" data-i18n="footer.douyin">抖音</a>
+        </div>
+        <div class="footer-links">
+            <a href="../about.html" data-i18n="footer.about_us">关于我们</a>
+            <a href="../contact.html" data-i18n="footer.contact_us">联系我们</a>
+            <a href="#" data-i18n="footer.terms">条款</a>
+            <a href="#" data-i18n="footer.privacy">隐私策略</a>
+        </div>
+    </div>
+    
+    <!-- AI客服聊天组件 -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 13.54 2.38 14.98 3.06 16.26L2 22L7.74 20.94C9.02 21.62 10.46 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C10.74 20 9.54 19.68 8.5 19.1L8.19 18.93L4.95 19.75L5.77 16.51L5.6 16.2C4.32 14.46 4 12.24 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="currentColor"/>
+                <path d="M8 10H10V12H8V10ZM12 10H14V12H12V10ZM16 10H18V12H16V10Z" fill="currentColor"/>
+            </svg>
+            <span class="chatbot-text" data-i18n="chatbot.title">AI助手</span>
+        </div>
+
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <div class="chatbot-avatar">🤖</div>
+                    <div class="chatbot-info">
+                        <div class="chatbot-name" data-i18n="chatbot.name">灵境AI助手</div>
+                        <div class="chatbot-status" data-i18n="chatbot.status">在线</div>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">&times;</button>
+            </div>
+
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-text" data-i18n="chatbot.welcome">你好！我是灵境AI助手，很高兴为您服务。请问有什么可以帮助您的吗？</div>
+                        <div class="message-time"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatbot-input-container">
+                <div class="chatbot-input-wrapper">
+                    <input type="text" class="chatbot-input" id="chatbotInput" data-i18n="chatbot.placeholder" placeholder="输入您的问题..." maxlength="500">
+                    <button class="chatbot-send" id="chatbotSend">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="chatbot-typing" id="chatbotTyping" style="display: none;">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="typing-text" data-i18n="chatbot.typing">AI助手正在思考...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../js/i18n-simple.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/chatbot.js"></script>
+</body>
+</html>

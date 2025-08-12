@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-title-key="home.title">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>灵境 - 探索无限可能</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&family=Baloo+2:wght@400;500;600;700&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- 1. 顶部导航栏 -->
+    <div class="header">
+        <!-- 左上角导航按钮 -->
+        <button class="menu-button" id="menuButton">☰</button>
+        
+        <!-- 轮换字幕 -->
+        <div class="rotating-text">
+            <span class="active">"165465"</span>
+            <span>"灵境理解我的每一个想法"</span>
+        </div>
+        
+        <!-- 语言切换按钮 -->
+        <div class="language-switcher">
+            <button class="lang-btn" id="langSwitcher">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text" id="currentLang">中文</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- 侧边导航菜单 -->
+    <div class="menu-overlay" id="menuOverlay">
+        <!-- 关闭按钮 -->
+        <button class="close-menu" id="closeMenu">✕</button>
+        
+        <ul class="menu-items">
+            <li><a href="index.html" data-i18n="nav.home">首页</a></li>
+            <li><a href="#" data-i18n="nav.download">下载灵境</a></li>
+            <li><a href="pages/blog/index.html" data-i18n="nav.blog">博客</a></li>
+            <li><a href="pages/about.html" data-i18n="nav.about">关于灵境</a></li>
+            <li><a href="pages/faq.html" data-i18n="nav.faq">常见问题</a></li>
+            <li><a href="pages/careers.html" data-i18n="nav.careers">职业</a></li>
+            <li><a href="pages/contact.html" data-i18n="nav.contact">联系我们</a></li>
+            <li><a href="#" data-i18n="nav.wechat">微信</a></li>
+            <li><a href="#" data-i18n="nav.douyin">抖音</a></li>
+        </ul>
+    </div>
+    
+    <!-- 手绘装饰元素 -->
+    <div class="decorations">
+        <div class="star star-1">✨</div>
+        <div class="star star-2">⭐</div>
+        <div class="star star-3">💫</div>
+        <div class="doodle doodle-1">~</div>
+        <div class="doodle doodle-2">♪</div>
+        <div class="doodle doodle-3">♫</div>
+        <div class="cloud cloud-1">☁️</div>
+        <div class="cloud cloud-2">☁️</div>
+    </div>
+
+    <!-- 分散的媒体内容 -->
+    <div class="scattered-media">
+        <!-- 视频元素 -->
+        <div class="media-item video-item-1">
+            <video autoplay muted loop>
+                <source src="assets/PLANET.webm" type="video/webm">
+            </video>
+        </div>
+        
+        <div class="media-item video-item-2">
+            <video autoplay muted loop>
+                <source src="assets/jinjianzhu.webm" type="video/webm">
+            </video>
+        </div>
+        
+        <div class="media-item video-item-3">
+            <video autoplay muted loop>
+                <source src="assets/lajiji.webm" type="video/webm">
+            </video>
+        </div>
+        
+        <div class="media-item video-item-4">
+            <video autoplay muted loop>
+                <source src="assets/liangpitu.webm" type="video/webm">
+            </video>
+        </div>
+        
+        <div class="media-item video-item-5">
+            <video autoplay muted loop>
+                <source src="assets/taiyanghua.webm" type="video/webm">
+            </video>
+        </div>
+        
+        <div class="media-item video-item-6">
+            <video autoplay muted loop>
+                <source src="assets/gabalong.webm" type="video/webm">
+            </video>
+        </div>
+        
+        <div class="media-item video-item-7">
+            <video autoplay muted loop>
+                <source src="assets/xiaoshanzhu.webm" type="video/webm">
+            </video>
+        </div>
+        
+        <!-- 图片元素 -->
+       
+        
+        
+        
+        <div class="media-item image-item-4">
+            <img src="images/planet line.png" alt="Planet Line">
+        </div>
+        
+        <div class="media-item image-item-5">
+            <img src="images/星球2D图.png" alt="星球2D图">
+        </div>
+    </div>
+
+    <div class="content-wrapper">
+        <!-- 3. 中心品牌展示区 -->
+        <div class="brand-container">
+            <img id="brandImage" src="images/GABA CHINESE.png" alt="Gaba Brand" class="brand-image">
+        </div>
+        
+        
+    </div>
+
+    <!-- 社交媒体图标 -->
+    <div class="social-icons-container">
+        <div class="social-left">
+            <a href="#" class="social-icon" id="xiaohongshu">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="3" width="18" height="18" rx="3"/>
+                    <circle cx="8" cy="12" r="3"/>
+                    <path d="M16 8v8"/>
+                    <path d="M20 10l-4-2-4 2v6l4-2 4 2z"/>
+                </svg>
+                <span class="social-text">小红书</span>
+            </a>
+            <a href="#" class="social-icon" id="wechat">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/>
+                    <path d="M8 10.5c1 0 2-.5 2-2s-1-2-2-2-2 .5-2 2 1 2 2 2z"/>
+                    <path d="M16 10.5c1 0 2-.5 2-2s-1-2-2-2-2 .5-2 2 1 2 2 2z"/>
+                    <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                </svg>
+                <span class="social-text">微信</span>
+            </a>
+        </div>
+        <div class="social-right">
+            <a href="#" class="social-icon" id="twitter">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4l11.733 16h4.267l-11.733-16z"/>
+                    <path d="M6.8 15.6l4.4-10.8"/>
+                    <path d="M12.8 4.8l4.4 10.8"/>
+                </svg>
+                <span class="social-text">Twitter</span>
+            </a>
+            <a href="#" class="social-icon" id="instagram">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <path d="M17.5 6.5h.01"/>
+                </svg>
+                <span class="social-text">Instagram</span>
+            </a>
+        </div>
+    </div>
+
+    <!-- 底部区域 -->
+    <div class="footer-index">
+        <!-- 4. 左下角按钮 -->
+        <button class="learn-more" onclick="window.location.href='pages/about.html'" data-i18n="home.learn.more">了解更多信息</button>
+        
+        <!-- 5. 页面底部操作按钮 -->
+        <div class="bottom-actions">
+            <button class="action-button" id="watchTrailerBtn" data-i18n="home.watch.trailer">观看预告片</button>
+            <button class="action-button" data-i18n="home.app.store">在应用商店</button>
+        </div>
+        
+        <!-- 6. 右下角品牌标识 -->
+        <div class="brand-signature" data-i18n="home.brand.signature">a  adventure</div>
+    </div>
+    
+    <!-- 视频预告片播放器模态窗口 -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-overlay" id="videoModalOverlay"></div>
+        <div class="video-modal-content">
+            <button class="video-modal-close" id="videoModalClose">&times;</button>
+            <video class="video-player" id="videoPlayer" controls>
+                <source src="assets/great weather.mp4" type="video/mp4">
+                <source src="assets/great weather.webm" type="video/webm">
+                <span data-i18n="video.not.supported">您的浏览器不支持视频播放。</span>
+            </video>
+            <div class="video-info">
+                <h3 data-i18n="video.title">灵境预告片</h3>
+                <p data-i18n="video.description">探索无限可能的精彩世界</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- AI客服聊天组件 -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 13.54 2.38 14.98 3.06 16.26L2 22L7.74 20.94C9.02 21.62 10.46 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C10.74 20 9.54 19.68 8.5 19.1L8.19 18.93L4.95 19.75L5.77 16.51L5.6 16.2C4.32 14.46 4 12.24 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="currentColor"/>
+                <path d="M8 10H10V12H8V10ZM12 10H14V12H12V10ZM16 10H18V12H16V10Z" fill="currentColor"/>
+            </svg>
+            <span class="chatbot-text" data-i18n="chatbot.title">AI助手</span>
+        </div>
+
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <div class="chatbot-avatar">🤖</div>
+                    <div class="chatbot-info">
+                        <div class="chatbot-name" data-i18n="chatbot.name">灵境AI助手</div>
+                        <div class="chatbot-status" data-i18n="chatbot.status">在线</div>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">&times;</button>
+            </div>
+
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-text" data-i18n="chatbot.welcome">你好！我是灵境AI助手，很高兴为您服务。请问有什么可以帮助您的吗？</div>
+                        <div class="message-time"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatbot-input-container">
+                <div class="chatbot-input-wrapper">
+                    <input type="text" class="chatbot-input" id="chatbotInput" data-i18n="chatbot.placeholder" placeholder="输入您的问题..." maxlength="500">
+                    <button class="chatbot-send" id="chatbotSend">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="chatbot-typing" id="chatbotTyping" style="display: none;">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="typing-text" data-i18n="chatbot.typing">AI助手正在思考...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n-simple.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>
