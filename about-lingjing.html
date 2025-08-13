@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-title-key="company.title">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于灵境 | GABA PLANET</title>
+    <meta name="description" content="在这个数字化连接比以往更快的时代，我们相信，真正的连接应该依然温暖、真诚、鲜活。我们打造的不只是一个会聊天的AI，而是一个会理解、会记忆、会成长的数字人世界。">
+    
+    <!-- Open Graph 标签 -->
+    <meta property="og:title" content="关于灵境 | GABA PLANET">
+    <meta property="og:description" content="让 AI 拥有生命，让数字人能够记住、感受、陪伴">
+    <meta property="og:image" content="/assets/about-lingjing/hero-image.jpg">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Source+Sans+Pro:wght@300;400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <style>
+        /* About Lingjing Wegic风格设计 */
+        * {
+            font-family: 'Inter', 'Source Sans Pro', 'Noto Sans SC', ui-sans-serif, system-ui, -apple-system, sans-serif;
+        }
+        
+        .content-section {
+            padding: 140px 0;
+            background: transparent;
+            margin-bottom: 6rem;
+            position: relative;
+        }
+        
+        /* 首屏section特殊样式 */
+        .content-section.hero-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 200px 0;
+            background: radial-gradient(ellipse at center, rgba(246, 200, 62, 0.08) 0%, transparent 60%);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            position: relative;
+            text-align: center;
+        }
+        
+        .section-title {
+            font-size: 4.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3rem;
+            background: linear-gradient(135deg, #F6C83E 0%, #FF6B6B 50%, #4ECDC4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -20px;
+            right: -20px;
+            bottom: -15px;
+            background: linear-gradient(135deg, rgba(246, 200, 62, 0.1), rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+            border-radius: 50px;
+            z-index: -1;
+            filter: blur(25px);
+        }
+        
+        .section-content {
+            font-size: 1.8rem;
+            line-height: 1.8;
+            color: #333;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: left;
+            background: white;
+            padding: 4rem 3.5rem;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+            transform: rotate(0.5deg);
+            position: relative;
+            font-weight: 400;
+        }
+        
+        .section-content:nth-child(even) {
+            transform: rotate(-0.5deg);
+        }
+        
+        .section-content:hover {
+            transform: rotate(0deg) translateY(-3px);
+            border-color: #FFE066;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+        
+        .section-content p {
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+        
+        .section-content p:last-child {
+            margin-bottom: 0;
+        }
+        
+        /* 特色功能卡片样式 - Wegic风格 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 3rem 2.5rem;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.08),
+                0 8px 20px rgba(0, 0, 0, 0.04);
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #F6C83E, #FF6B6B, #4ECDC4);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 
+                0 32px 60px rgba(0, 0, 0, 0.12),
+                0 16px 32px rgba(0, 0, 0, 0.06);
+        }
+        
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            filter: grayscale(0.2);
+            transition: filter 0.3s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            filter: grayscale(0);
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: #1a202c;
+            letter-spacing: -0.01em;
+        }
+        
+        .feature-desc {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+        
+        /* 时间线样式 - Wegic风格 */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #F6C83E, #FFD700, #FFA500);
+            transform: translateX(-50%);
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(246, 200, 62, 0.3);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin: 4rem 0;
+            display: flex;
+            align-items: flex-start;
+            min-height: 100px;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            justify-content: flex-end;
+        }
+        
+        .timeline-item:nth-child(even) {
+            justify-content: flex-start;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 40px;
+            width: 18px;
+            height: 18px;
+            background: linear-gradient(135deg, #F6C83E, #FFD700);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 4px solid white;
+            box-shadow: 0 0 0 4px rgba(246, 200, 62, 0.3);
+            z-index: 2;
+        }
+        
+        .timeline-date {
+            font-weight: 700;
+            background: linear-gradient(135deg, #F6C83E, #FFD700);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            letter-spacing: -0.01em;
+        }
+        
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem 2rem;
+            border-radius: 20px;
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.08),
+                0 8px 20px rgba(0, 0, 0, 0.04);
+            max-width: 400px;
+            margin: 0 40px;
+            color: #1a202c;
+            line-height: 1.7;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 32px 60px rgba(0, 0, 0, 0.12),
+                0 16px 32px rgba(0, 0, 0, 0.06);
+        }
+        
+        .timeline-item:nth-child(odd) .timeline-content {
+            text-align: right;
+        }
+        
+        .timeline-item:nth-child(even) .timeline-content {
+            text-align: left;
+        }
+        
+        .timeline-text {
+            color: #4a5568;
+            line-height: 1.7;
+            margin-top: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 400;
+        }
+        
+        /* 动画效果 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .section-title {
+            animation: fadeInUp 0.8s ease-out;
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease-in-out infinite, fadeInUp 0.8s ease-out;
+        }
+        
+        .section-content {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 2rem;
+            }
+            
+            .section-title {
+                font-size: 3rem;
+                line-height: 1.1;
+            }
+            
+            .section-content {
+                font-size: 1.5rem;
+                line-height: 1.8;
+                padding: 3rem 2rem;
+            }
+            
+            .content-section.hero-section {
+                min-height: 100vh;
+                padding: 150px 0;
+            }
+            
+            .content-section {
+                padding: 100px 0;
+                margin-bottom: 4rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            /* 时间线移动端样式 */
+            .timeline::before {
+                left: 20px;
+                transform: none;
+            }
+            
+            .timeline-item {
+                justify-content: flex-start !important;
+            }
+            
+            .timeline-item::before {
+                left: 20px;
+                transform: none;
+                top: 30px;
+            }
+            
+            .timeline-content {
+                margin-left: 50px;
+                margin-right: 0;
+                max-width: none;
+                text-align: left !important;
+            }
+        }
+        
+        /* 特殊底部section样式 */
+        .content-section.cta-section {
+            background: linear-gradient(135deg, #9C27B0 0%, #BA68C8 50%, #CE93D8 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        
+        .cta-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section .section-title {
+            color: white;
+            background: none;
+            -webkit-text-fill-color: white;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-section .section-title::before {
+            display: none;
+        }
+        
+        .cta-section .section-content {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-section .section-content p {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .hero-cta {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 1rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+        
+        .hero-cta:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* 隐藏语言版本 */
+        .lang-content {
+            display: none;
+        }
+        
+        .lang-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- 手绘装饰元素 -->
+    <div class="decorations">
+        <div class="star star-1">✨</div>
+        <div class="star star-2">⭐</div>
+        <div class="star star-3">💫</div>
+        <div class="doodle doodle-1">~</div>
+        <div class="doodle doodle-2">♪</div>
+        <div class="doodle doodle-3">♫</div>
+        <div class="cloud cloud-1">☁️</div>
+        <div class="cloud cloud-2">☁️</div>
+    </div>
+    
+    <!-- 1. 顶部导航栏 -->
+    <div class="header">
+        <!-- 左上角导航按钮 -->
+        <button class="menu-button" id="menuButton">☰</button>
+        
+        <!-- 轮换字幕 -->
+        <div class="rotating-text">
+            <span class="active">"165465"</span>
+            <span>"灵境理解我的每一个想法"</span>
+        </div>
+        
+        <!-- 语言切换按钮 -->
+        <div class="language-switcher">
+            <button class="lang-btn" id="langSwitcher">
+                <span class="lang-icon">🌐</span>
+                <span class="lang-text" id="currentLang">中文</span>
+            </button>
+        </div>
+    </div>
+    
+    <!-- 侧边导航菜单 -->
+    <div class="menu-overlay" id="menuOverlay">
+        <!-- 关闭按钮 -->
+        <button class="close-menu" id="closeMenu">✕</button>
+        
+        <ul class="menu-items">
+            <li><a href="index.html" data-i18n="nav.home">首页</a></li>
+            <li><a href="#" data-i18n="nav.download">下载灵境</a></li>
+            <li><a href="pages/blog/index.html" data-i18n="nav.blog">博客</a></li>
+            <li><a href="about-lingjing.html" data-i18n="nav.about">关于灵境</a></li>
+            <li><a href="pages/faq.html" data-i18n="nav.faq">常见问题</a></li>
+            <li><a href="pages/careers.html" data-i18n="nav.careers">职业</a></li>
+            <li><a href="pages/contact.html" data-i18n="nav.contact">联系我们</a></li>
+            <li><a href="#" data-i18n="nav.wechat">微信</a></li>
+            <li><a href="#" data-i18n="nav.douyin">抖音</a></li>
+        </ul>
+    </div>
+    
+    <div class="content-wrapper">
+
+    <!-- 关于灵境 -->
+    <section class="content-section hero-section">
+        <div class="container">
+            <!-- 中文版本 -->
+            <div class="lang-content" data-lang="zh">
+                <h2 class="section-title">关于灵境</h2>
+                <div class="section-content">
+                    <p>在这个数字化连接比以往更快的时代，我们相信，真正的连接应该依然温暖、真诚、鲜活。</p>
+                    <p>我们打造的不只是一个会聊天的 AI，而是一个会理解、会记忆、会成长的数字人世界，并为每一位用户和创作者提供展示与创作的舞台。</p>
+                </div>
+            </div>
+            
+            <!-- 英文版本 -->
+            <div class="lang-content" data-lang="en">
+                <h2 class="section-title">About Lingjing</h2>
+                <div class="section-content">
+                    <p>In today's world of ever-faster digital connections, we believe that true connection should remain warm, sincere, and alive.</p>
+                    <p>We are building more than just an AI that can chat — we are creating a world of digital humans who can understand, remember, and grow, providing a stage for both users and creators to showcase and create.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我们的起点 -->
+    <section class="content-section">
+        <div class="container">
+            <!-- 中文版本 -->
+            <div class="lang-content" data-lang="zh">
+                <h2 class="section-title">我们的起点</h2>
+                <div class="section-content">
+                    <p>这一切源于一个简单的发现：科技让交流变得容易，却让"真正的连接"变得稀缺。</p>
+                    <p>我们的团队由创作者、艺术家、工程师和梦想家组成，来自人工智能、虚拟现实、交互设计和艺术创作等领域。我们看到了情感与交互结合的巨大潜力——让数字角色不再是冷冰冰的程序，而是你生活中的伙伴，同时让用户与创作者在同一个平台上创造属于自己的互动故事。</p>
+                </div>
+            </div>
+            
+            <!-- 英文版本 -->
+            <div class="lang-content" data-lang="en">
+                <h2 class="section-title">Our Beginning</h2>
+                <div class="section-content">
+                    <p>It all started with a simple realization: technology has made communication easier, but genuine connection increasingly rare.</p>
+                    <p>Our team of creators, artists, engineers, and dreamers comes from backgrounds in artificial intelligence, virtual reality, interaction design, and creative arts. We saw the vast potential of combining emotion with interaction — to make digital characters more than cold programs, turning them into companions in your life, and to empower users and creators to build their own interactive stories on one shared platform.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我们的愿景 -->
+    <section class="content-section">
+        <div class="container">
+            <!-- 中文版本 -->
+            <div class="lang-content" data-lang="zh">
+                <h2 class="section-title">我们的愿景</h2>
+                <div class="section-content">
+                    <p>让 AI 拥有生命，让数字人能够记住、感受、陪伴。</p>
+                    <p>我们相信，互动不应只是对话，而应该是你与数字伙伴之间一次次的真实经历与双向成长。</p>
+                    <p>我们希望这个平台不仅属于我们，更属于每一位用户——让每个人都能成为创作者（UGC），共同建设一个开放、多元、充满创意的数字人宇宙。</p>
+                </div>
+            </div>
+            
+            <!-- 英文版本 -->
+            <div class="lang-content" data-lang="en">
+                <h2 class="section-title">Our Vision</h2>
+                <div class="section-content">
+                    <p>To bring AI to life — enabling digital humans to remember, feel, and accompany.</p>
+                    <p>We believe interaction should be more than dialogue; it should be a series of authentic experiences and mutual growth between you and your digital partner.</p>
+                    <p>We want this platform to belong not only to us, but to every user — enabling everyone to become a creator (UGC) and together build an open, diverse, and creative digital human universe.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我们的与众不同 -->
+    <section class="content-section">
+        <div class="container">
+            <!-- 中文版本 -->
+            <div class="lang-content" data-lang="zh">
+                <h2 class="section-title">我们的与众不同</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3 class="feature-title">自研记忆引擎</h3>
+                        <p class="feature-desc">记住共同事件、个人偏好和社交关系，让每次互动都独一无二，成为长期伙伴。</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">😊</div>
+                        <h3 class="feature-title">可玩情绪体系</h3>
+                        <p class="feature-desc">情绪驱动表情、语音和动作，让关系进度可见可玩。</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h3 class="feature-title">盲盒与角色解锁</h3>
+                        <p class="feature-desc">对话满 30 分钟即可获得盲盒，或通过奖励系统解锁新伙伴。</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎭</div>
+                        <h3 class="feature-title">创作者共演平台（UGC）</h3>
+                        <p class="feature-desc">体验官方角色，或创建、分享、交易你的数字人和互动剧情，让创作与表演像发一条动态一样简单。</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 英文版本 -->
+            <div class="lang-content" data-lang="en">
+                <h2 class="section-title">What Makes Us Different</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🧠</div>
+                        <h3 class="feature-title">Proprietary Memory Engine</h3>
+                        <p class="feature-desc">Remembers shared events, preferences, and relationships for unique, long-term companionship.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">😊</div>
+                        <h3 class="feature-title">Playable Emotion System</h3>
+                        <p class="feature-desc">Emotions drive expressions, voices, and actions; relationship progress becomes visible and playable.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <h3 class="feature-title">Mystery Boxes & Character Unlocks</h3>
+                        <p class="feature-desc">Earn a mystery box after 30 minutes of conversation, or unlock companions via rewards.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">🎭</div>
+                        <h3 class="feature-title">UGC Co-Performance Platform</h3>
+                        <p class="feature-desc">Experience official characters, or create, share, and trade your own digital humans and interactive stories.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我们的旅程 -->
+    <section class="content-section">
+        <div class="container">
+            <!-- 中文版本 -->
+            <div class="lang-content" data-lang="zh">
+                <h2 class="section-title">我们的旅程</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025年2月</div>
+                            <div class="timeline-text">概念构思与初步规划</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025年5月</div>
+                            <div class="timeline-text">核心团队成立，确定数字人互动与 UGC 平台方向</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025年6–8月</div>
+                            <div class="timeline-text">完成核心功能设计与技术选型</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025年9月</div>
+                            <div class="timeline-text">启动首个数字人原型及 UGC 创作工具开发</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2025年10月</div>
+                            <div class="timeline-text">预计完成 App 内测版本，开放首批用户与创作者体验</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026年</div>
+                            <div class="timeline-text">正式上线，构建全球创作者生态与数字人交易社区</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 英文版本 -->
+            <div class="lang-content" data-lang="en">
+                <h2 class="section-title">Our Journey</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Feb 2025</div>
+                            <div class="timeline-text">Concept ideation and initial planning</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">May 2025</div>
+                            <div class="timeline-text">Core team formed, defining direction for the digital human interaction and UGC platform</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Jun–Aug 2025</div>
+                            <div class="timeline-text">Core feature design and technology selection</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Sep 2025</div>
+                            <div class="timeline-text">Start development of first digital human prototype and UGC creation tools</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">Oct 2025</div>
+                            <div class="timeline-text">Target completion of internal app testing, open to first batch of users and creators</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2026</div>
+                            <div class="timeline-text">Official launch, building a global creator ecosystem and digital human marketplace</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 我们是谁 -->
+    <section class="content-section">
+        <div class="container">
+            <!-- 中文版本 -->
+            <div class="lang-content" data-lang="zh">
+                <h2 class="section-title">我们是谁</h2>
+                <div class="section-content">
+                    <p>我们是一支由创作者、艺术家、工程师和梦想家组成的团队，来自顶尖高校与知名科技公司，拥有人工智能、游戏开发、机器人、沉浸式设计和艺术创作等多领域经验。</p>
+                    <p>我们的使命是：让科技重新拥有温度，并让每个人都能成为数字世界的创造者。</p>
+                </div>
+            </div>
+            
+            <!-- 英文版本 -->
+            <div class="lang-content" data-lang="en">
+                <h2 class="section-title">Who We Are</h2>
+                <div class="section-content">
+                    <p>We are a team of creators, artists, engineers, and dreamers from top universities and leading technology companies, with expertise spanning AI, game development, robotics, immersive design, and creative arts.</p>
+                    <p>Our mission: To bring warmth back to technology, and to empower everyone to be a creator in the digital world.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 加入我们 -->
+    <section class="content-section cta-section">
+        <div class="container">
+            <!-- 中文版本 -->
+            <div class="lang-content" data-lang="zh">
+                <h2 class="section-title">加入我们</h2>
+                <div class="section-content">
+                    <p>我们正在打造一个数字人与人类共生的世界，</p>
+                    <p>无论你是用户、创作者，还是合作伙伴，</p>
+                    <p>都欢迎加入这场未来的情感 AI 冒险。</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="pages/contact.html" class="hero-cta">联系我们</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 英文版本 -->
+            <div class="lang-content" data-lang="en">
+                <h2 class="section-title">Join Us</h2>
+                <div class="section-content">
+                    <p>We are building a world where digital humans and humans coexist.</p>
+                    <p>Whether you are a user, a creator, or a partner,</p>
+                    <p>we welcome you to join this future of emotional AI.</p>
+                    <div style="margin-top: 2rem;">
+                        <a href="pages/contact.html" class="hero-cta">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 底部区域 -->
+    <div class="footer">
+        <div class="footer-logo">Portola</div>
+        <div class="social-links">
+            <a href="#" data-i18n="footer.discord">不和</a>
+            <a href="#" data-i18n="footer.instagram">Instagram</a>
+            <a href="#" data-i18n="footer.douyin">抖音</a>
+        </div>
+        <div class="footer-links">
+            <a href="about-lingjing.html" data-i18n="footer.about_us">关于我们</a>
+            <a href="pages/contact.html" data-i18n="footer.contact_us">联系我们</a>
+            <a href="#" data-i18n="footer.terms">条款</a>
+            <a href="#" data-i18n="footer.privacy">隐私策略</a>
+        </div>
+    </div>
+    
+    <!-- AI客服聊天组件 -->
+    <div class="chatbot-container" id="chatbotContainer">
+        <div class="chatbot-toggle" id="chatbotToggle">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2C6.48 2 2 6.48 2 12C2 13.54 2.38 14.98 3.06 16.26L2 22L7.74 20.94C9.02 21.62 10.46 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 20C10.74 20 9.54 19.68 8.5 19.1L8.19 18.93L4.95 19.75L5.77 16.51L5.6 16.2C4.32 14.46 4 12.24 4 12C4 7.58 7.58 4 12 4C16.42 4 20 7.58 20 12C20 16.42 16.42 20 12 20Z" fill="currentColor"/>
+                <path d="M8 10H10V12H8V10ZM12 10H14V12H12V10ZM16 10H18V12H16V10Z" fill="currentColor"/>
+            </svg>
+            <span class="chatbot-text" data-i18n="chatbot.title">AI助手</span>
+        </div>
+
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <div class="chatbot-title">
+                    <div class="chatbot-avatar">🤖</div>
+                    <div class="chatbot-info">
+                        <div class="chatbot-name" data-i18n="chatbot.name">灵境AI助手</div>
+                        <div class="chatbot-status" data-i18n="chatbot.status">在线</div>
+                    </div>
+                </div>
+                <button class="chatbot-close" id="chatbotClose">&times;</button>
+            </div>
+
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="message bot-message">
+                    <div class="message-avatar">🤖</div>
+                    <div class="message-content">
+                        <div class="message-text" data-i18n="chatbot.welcome">你好！我是灵境AI助手，很高兴为您服务。请问有什么可以帮助您的吗？</div>
+                        <div class="message-time"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chatbot-input-container">
+                <div class="chatbot-input-wrapper">
+                    <input type="text" class="chatbot-input" id="chatbotInput" data-i18n="chatbot.placeholder" placeholder="输入您的问题..." maxlength="500">
+                    <button class="chatbot-send" id="chatbotSend">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M2 21L23 12L2 3V10L17 12L2 14V21Z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="chatbot-typing" id="chatbotTyping" style="display: none;">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="typing-text" data-i18n="chatbot.typing">AI助手正在思考...</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n-simple.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

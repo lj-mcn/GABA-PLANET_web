@@ -46,6 +46,9 @@ window.i18nData = {
         'about.mission_title': '我们的使命',
         'about.team_title': '团队介绍',
         
+        // About Lingjing页面 (新)
+        'company.title': '关于灵境 | GABA PLANET',
+        
         // Contact页面
         'contact.title': '联系我们 - 灵境',
         'contact.page_title': '联系我们',
@@ -126,6 +129,9 @@ window.i18nData = {
         'about.mission_title': 'Our Mission',
         'about.team_title': 'Meet the Team',
         
+        // About Lingjing页面 (新)
+        'company.title': 'About Lingjing | GABA PLANET',
+        
         // Contact页面
         'contact.title': 'Contact Us - Lingjing',
         'contact.page_title': 'Contact Us',
@@ -204,6 +210,9 @@ class SimpleI18n {
         // 更新所有翻译元素
         this.updateElements();
         
+        // 更新语言内容区块
+        this.updateLanguageContent();
+        
         // 更新语言切换按钮
         this.updateLanguageSwitcher();
         
@@ -232,6 +241,22 @@ class SimpleI18n {
             
             console.log(`📝 ${index + 1}. "${key}" → "${translation}"`);
         });
+    }
+    
+    updateLanguageContent() {
+        // 处理多语言内容区块
+        const langContents = document.querySelectorAll('.lang-content');
+        if (langContents.length > 0) {
+            langContents.forEach(element => {
+                const elementLang = element.getAttribute('data-lang');
+                if (elementLang === this.currentLanguage) {
+                    element.classList.add('active');
+                } else {
+                    element.classList.remove('active');
+                }
+            });
+            console.log(`🌍 已更新 ${langContents.length} 个语言内容区块到: ${this.currentLanguage}`);
+        }
     }
     
     updateLanguageSwitcher() {
