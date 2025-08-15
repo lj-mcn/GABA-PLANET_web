@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-title-key="ipstory.title">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Story | GABA PLANET</title>
+    <meta name="description" content="探索嘎巴星球的故事和创意世界">
+    
+    <!-- Open Graph 标签 -->
+    <meta property="og:title" content="IP Story | GABA PLANET">
+    <meta property="og:description" content="探索嘎巴星球的故事和创意世界">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    
+    <style>
+        :root {
+            --bg1: #FFF6DC;
+            --bg2: #FFE8C7;
+            --spot1: rgba(120,119,198,.18);
+            --spot2: rgba(255,119,48,.18);
+            --spot3: rgba(120,220,120,.16);
+            --brand: #222;
+            --accent: #B7E066;
+            --cta: #FFD34E;
+            --muted: #666;
+            --card-bg: #fff;
+            --radius: 24px;
+            --shadow: 0 10px 30px rgba(0,0,0,.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(to bottom, var(--bg1) 0%, var(--bg2) 100%);
+            position: relative;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        body::before,
+        body::after {
+            content: '';
+            position: fixed;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        body::before {
+            width: 800px;
+            height: 800px;
+            top: -200px;
+            left: -200px;
+            background: radial-gradient(circle, var(--spot1) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float1 40s ease-in-out infinite;
+        }
+
+        body::after {
+            width: 600px;
+            height: 600px;
+            bottom: -100px;
+            right: -100px;
+            background: radial-gradient(circle, var(--spot2) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float2 50s ease-in-out infinite;
+        }
+
+        .spot3 {
+            position: fixed;
+            width: 700px;
+            height: 700px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: radial-gradient(circle, var(--spot3) 0%, transparent 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+            animation: float3 60s ease-in-out infinite;
+        }
+
+        @keyframes float1 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -20px) rotate(120deg); }
+            66% { transform: translate(-20px, 30px) rotate(240deg); }
+        }
+
+        @keyframes float2 {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-40px, -30px) rotate(180deg); }
+        }
+
+        @keyframes float3 {
+            0%, 100% { transform: translate(-50%, -50%) rotate(0deg); }
+            25% { transform: translate(-45%, -55%) rotate(90deg); }
+            50% { transform: translate(-55%, -45%) rotate(180deg); }
+            75% { transform: translate(-50%, -50%) rotate(270deg); }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out forwards;
+        }
+
+        .fade-in-delayed {
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-out 0.3s forwards;
+        }
+
+        /* Navigation - 使用主CSS样式 */
+
+        /* Hero Section */
+        .hero-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 80px 32px 120px;
+            text-align: center;
+        }
+
+        .hero-title {
+            margin-bottom: 60px;
+        }
+
+        .hero-title h1 {
+            font-size: 64px;
+            font-weight: 900;
+            color: var(--brand);
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+
+        .hero-title h2 {
+            font-size: 48px;
+            font-weight: 500;
+            color: var(--muted);
+            line-height: 1.3;
+        }
+
+        .hero-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-bottom: 80px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-column {
+            text-align: left;
+        }
+
+        .hero-column h3 {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--brand);
+            margin-bottom: 16px;
+        }
+
+        .hero-column p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--muted);
+        }
+
+        .hero-image {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        /* Stories Section */
+        .stories-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 32px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+
+        .section-badge {
+            background: var(--accent);
+            color: var(--brand);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+        }
+
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--brand);
+        }
+
+        .story-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 32px;
+            margin-bottom: 24px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+            position: relative;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .story-card:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .story-content {
+            flex: 1;
+        }
+
+        .story-date {
+            font-size: 14px;
+            color: var(--muted);
+            margin-bottom: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .story-title {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--brand);
+            margin-bottom: 16px;
+            line-height: 1.4;
+        }
+
+        .story-excerpt {
+            font-size: 16px;
+            line-height: 1.75;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .story-author {
+            font-size: 14px;
+            color: var(--muted);
+            font-style: italic;
+        }
+
+        .story-image {
+            width: 300px;
+            height: 180px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+
+        .story-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: var(--radius);
+        }
+
+        .story-cta {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: var(--cta);
+            color: var(--brand);
+            padding: 8px 16px;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 700;
+            transition: transform 0.3s ease;
+        }
+
+        .story-cta:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Community Section */
+        .community-section {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 120px 32px;
+        }
+
+        .community-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 60px;
+            gap: 60px;
+        }
+
+        .community-title {
+            font-size: 48px;
+            font-weight: 900;
+            color: var(--brand);
+            line-height: 1.3;
+            flex: 1;
+        }
+
+        .community-description {
+            flex: 1;
+            font-size: 18px;
+            line-height: 1.75;
+            color: var(--muted);
+        }
+
+        .avatars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .avatar-card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 32px;
+            text-align: center;
+            position: relative;
+        }
+
+        .avatar-image {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .avatar-name {
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--brand);
+            margin-bottom: 12px;
+        }
+
+        .avatar-email {
+            background: rgba(0,0,0,0.05);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            color: var(--muted);
+            display: inline-block;
+        }
+
+        .avatar-check {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            width: 24px;
+            height: 24px;
+            background: var(--cta);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-check::after {
+            content: '✓';
+            color: var(--brand);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 60px 32px;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 1200px) {
+            /* Desktop - already defined above */
+        }
+
+        @media (min-width: 768px) and (max-width: 1199px) {
+            .hero-columns {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .avatars-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-title h1 {
+                font-size: 48px;
+            }
+            
+            .hero-title h2 {
+                font-size: 36px;
+            }
+            
+            .community-title {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .nav-container {
+                padding: 16px 20px;
+            }
+            
+            .nav-menu {
+                gap: 16px;
+                font-size: 14px;
+            }
+            
+            .nav-cta {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            .hero-section {
+                padding: 40px 20px 80px;
+            }
+            
+            .hero-columns {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            
+            .hero-title h1 {
+                font-size: 36px;
+            }
+            
+            .hero-title h2 {
+                font-size: 24px;
+            }
+            
+            .stories-section,
+            .community-section {
+                padding: 80px 20px;
+            }
+            
+            .story-card {
+                flex-direction: column;
+                text-align: center;
+                gap: 24px;
+                padding: 24px;
+            }
+            
+            .story-image {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .story-cta {
+                position: static;
+                margin-top: 16px;
+                display: inline-block;
+            }
+            
+            .community-header {
+                flex-direction: column;
+                gap: 32px;
+            }
+            
+            .community-title {
+                font-size: 28px;
+            }
+            
+            .avatars-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+            
+            .section-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Gradient Spots -->
+    <div class="spot3"></div>
+
+    <!-- Navigation -->
+    <nav class="nav-container">
+        <a href="../index.html" class="nav-logo" data-i18n="nav.brand">嘎巴星球</a>
+        
+        <!-- 轮换字幕 -->
+        <div class="rotating-text">
+            <span class="active" data-i18n="ipstory.rotating.text1">"探索嘎巴星球的故事"</span>
+            <span data-i18n="ipstory.rotating.text2">"发现无限创意世界"</span>
+        </div>
+        
+        <div class="nav-menu">
+            <a href="../index.html" class="nav-link" data-i18n="nav.home">首页</a>
+            <a href="about-us.html" class="nav-link" data-i18n="nav.about">About Us</a>
+            <a href="ip-story.html" class="nav-link" data-i18n="nav.ipstory">IP Story</a>
+            
+            <!-- 语言切换按钮 -->
+            <div class="language-switcher">
+                <button class="lang-btn" id="langSwitcher">
+                    <span class="lang-icon">🌐</span>
+                    <span class="lang-text" id="currentLang">中文</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <main class="hero-section">
+        <div class="hero-title fade-in">
+            <h1 data-i18n="ipstory.hero.title"> 沉浸式探索嘎巴星球 </h1>
+            <h2 data-i18n="ipstory.hero.subtitle"> 开启你的奇妙之旅 </h2>
+        </div>
+
+        <div class="hero-columns fade-in-delayed">
+            <div class="hero-column">
+                <h3 data-i18n="ipstory.hero.adventure.title"> 奇妙探险 </h3>
+                <p data-i18n="ipstory.hero.adventure.desc"> 在嘎巴星球上体验前所未有的奇妙探险，每一个角落都隐藏着惊喜和神秘的力量，等待勇敢的探索者去发现。</p>
+            </div>
+            <div class="hero-column">
+                <h3 data-i18n="ipstory.hero.creativity.title"> 创意无限 </h3>
+                <p data-i18n="ipstory.hero.creativity.desc"> 发挥你的无限创意，与嘎巴星球一起创造属于你们的独特故事，让想象力在这里自由飞翔。 </p>
+            </div>
+            <div class="hero-column">
+                <h3 data-i18n="ipstory.hero.friendship.title"> 友谊伙伴 </h3>
+                <p data-i18n="ipstory.hero.friendship.desc"> 结识来自嘎巴星球各个角落的可爱伙伴，建立深厚的友谊，在互相帮助中体验成长的快乐与温暖。 </p>
+            </div>
+        </div>
+
+        <div class="hero-image fade-in-delayed">
+            <img src="..\images\ip story-1.jpg" alt="占位图">
+        </div>
+    </main>
+
+    <!-- Stories Section -->
+    <section id="stories" class="stories-section">
+        <div class="section-header fade-in">
+            <div class="section-badge" data-i18n="ipstory.stories.badge">嘎巴星球</div>
+            <h2 class="section-title" data-i18n="ipstory.stories.title">探索嘎巴星球的奇妙故事与创意灵感</h2>
+        </div>
+
+        <div class="stories-container fade-in-delayed">
+            <article class="story-card">
+                <a href="#" class="story-cta" data-i18n="ipstory.story1.cta"> 了解更多 </a>
+                <div class="story-content">
+                    <div class="story-date">
+                        <span data-i18n="ipstory.story1.date"> 2025年8月10日 </span>
+                    </div>
+                    <h3 class="story-title" data-i18n="ipstory.story1.title"> 嘎巴星球的垃圾村 </h3>
+                    <p class="story-excerpt" data-i18n="ipstory.story1.excerpt"> 在宇宙的某个角落，有一颗古怪又热闹的星球。它不大，却闪着奇怪的光，吸引着同类的灵魂靠近。这里住着各种奇形怪状的生物：会弹吉他的猫、戴墨镜的兔子、满身涂鸦的恐龙、背着风车的花脸超人……它们的家园，叫——垃圾村。 </p>
+                    <div class="story-author" data-i18n="ipstory.story1.author"> Wegic 占位 </div>
+                </div>
+                <div class="story-image">
+                    <img src="..\images\story image-1.jpg" alt="占位图">
+                </div>
+            </article>
+
+            <article class="story-card">
+                <a href="#" class="story-cta" data-i18n="ipstory.story2.cta"> 了解更多 </a>
+                <div class="story-content">
+                    <div class="story-date">
+                        <span data-i18n="ipstory.story2.date"> 2025年8月1日 </span>
+                    </div>
+                    <h3 class="story-title" data-i18n="ipstory.story2.title"> 垃圾村的奇妙规则 </h3>
+                    <p class="story-excerpt" data-i18n="ipstory.story2.excerpt">垃圾村没有国王，也没有精英。唯一的规则，就是没有规则。有人用废铁造飞船飞向未知，有人披着破布去拯救另一个倒霉蛋，有人研究如何让馒头飞到外太空。在这里，没有人会笑话你的奇怪想法，因为——他们可能更奇怪。</p>
+                    <div class="story-author" data-i18n="ipstory.story2.author">Wegic 占位</div>
+                </div>
+                <div class="story-image">
+                    <img src="..\images\story image-2.jpg" alt="占位图">
+                </div>
+            </article>
+
+            <article class="story-card">
+                <a href="#" class="story-cta" data-i18n="ipstory.story3.cta"> 了解更多 </a>
+                <div class="story-content">
+                    <div class="story-date">
+                        <span data-i18n="ipstory.story3.date"> 2025年8月1日 </span>
+                    </div>
+                    <h3 class="story-title" data-i18n="ipstory.story3.title"> 巴嘎星球的信仰 </h3>
+                    <p class="story-excerpt" data-i18n="ipstory.story3.excerpt">我们相信：完美是无聊的，不完美才有故事。在嘎巴星球，每个人都是主角，也可以是别人故事里的 NPC。你不需要改变自己，只需要带着你的脑洞来——这里，就是你的宇宙坐标。</p>
+                    <div class="story-author" data-i18n="ipstory.story3.author"> Wegic 占位 </div>
+                </div>
+                <div class="story-image">
+                    <img src="..\images\story image-3.jpg" alt="占位图">
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="community-section">
+        <div class="community-header fade-in">
+            <h2 class="community-title" data-i18n="ipstory.community.title"> 探索嘎巴星球的奇妙故事世界 </h2>
+            <div class="community-description">
+                <p data-i18n="ipstory.community.desc">嘎巴星球欢迎一切不合群的人：
+- 也许你在现实世界被叫过"怪咖"
+- 也许你习惯一个人画画、写歌、造故事
+- 也许你觉得世界的标准太无聊
+那就来垃圾村吧，这里有人会懂你、跟你一起疯。 </p>
+            </div>
+        </div>
+            
+
+        <div class="avatars-grid fade-in-delayed">
+            <div class="avatar-card">
+                <div class="avatar-image">
+                    <img src="../images/1-dragon.jpg" alt="嘎巴守护者">
+                </div>
+                <h3 class="avatar-name" data-i18n="ipstory.character1.name">嘎巴龙</h3>
+                <div class="avatar-email" data-i18n="ipstory.character1.desc">嘎巴星球主角</div>
+                <div class="avatar-check"></div>
+            </div>
+            <div class="avatar-card">
+                <div class="avatar-image">
+                    <img src="../images/2-rabbit.jpg" alt="星辰探索者">
+                </div>
+                <h3 class="avatar-name" data-i18n="ipstory.character2.name">亮屁兔</h3>
+                <div class="avatar-email" data-i18n="ipstory.character2.desc">嘎巴龙的死敌</div>
+                <div class="avatar-check"></div>
+            </div>
+            <div class="avatar-card">
+                <div class="avatar-image">
+                    <img src="../images/3-chicken.jpg" alt="音乐精灵">
+                </div>
+                <h3 class="avatar-name" data-i18n="ipstory.character3.name">垃圾鸡</h3>
+                <div class="avatar-email" data-i18n="ipstory.character3.desc">嘎巴龙的CP</div>
+                <div class="avatar-check"></div>
+            </div>
+            <div class="avatar-card">
+                <div class="avatar-image">
+                    <img src="../images/4-moneypig.png" alt="森林守护者">
+                </div>
+                <h3 class="avatar-name" data-i18n="ipstory.character4.name">金贱猪</h3>
+                <div class="avatar-email" data-i18n="ipstory.character4.desc">小山竹的双胞胎</div>
+                <div class="avatar-check"></div>
+            </div>
+            <div class="avatar-card">
+                <div class="avatar-image">
+                    <img src="../images/5-singgirl.png" alt="时间管理者">
+                </div>
+                <h3 class="avatar-name" data-i18n="ipstory.character5.name">小山竹</h3>
+                <div class="avatar-email" data-i18n="ipstory.character5.desc">金贱猪的双胞胎</div>
+                <div class="avatar-check"></div>
+            </div>
+            <div class="avatar-card">
+                <div class="avatar-image">
+                    <img src="../images/6-sunflowerman.png" alt="彩虹使者">
+                </div>
+                <h3 class="avatar-name" data-i18n="ipstory.character6.name">太阳花超人</h3>
+                <div class="avatar-email" data-i18n="ipstory.character6.desc">嘎巴龙的偶像</div>
+                <div class="avatar-check"></div>
+            </div>
+        </div>
+
+        <!-- 社交媒体图标 -->
+        <div class="social-media-container fade-in-delayed" style="margin-top: 60px; text-align: center;">
+            <h3 style="font-size: 24px; font-weight: 800; color: var(--brand); margin-bottom: 32px;">
+                <span data-i18n="ipstory.community.social.title">关注嘎巴星球社区</span>
+            </h3>
+            
+            <!-- 加载社交媒体图标精灵图 -->
+            <div style="display: none;">
+                <svg xmlns="http://www.w3.org/2000/svg">
+                    <!-- Instagram 图标 -->
+                    <symbol id="icon-instagram" viewBox="0 0 24 24">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+                    </symbol>
+
+                    <!-- 微信 (WeChat) 图标 -->
+                    <symbol id="icon-wechat" viewBox="0 0 24 24">
+                        <path d="M8.5 6C5.5 6 3 8.5 3 11.5c0 1.8.9 3.4 2.3 4.4L4.5 18l2.8-1.5c.7.2 1.4.3 2.2.3 3 0 5.5-2.5 5.5-5.5S11.5 6 8.5 6z" fill="currentColor"/>
+                        <circle cx="6.5" cy="10.5" r="0.8" fill="#fff"/>
+                        <circle cx="10.5" cy="10.5" r="0.8" fill="#fff"/>
+                        <path d="M15.5 9c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5c-.5 0-1-.1-1.5-.2L12 19l.8-1.5c-1-.7-1.6-1.8-1.6-3C11.2 11.5 13.2 9 15.5 9z" fill="currentColor"/>
+                        <circle cx="14" cy="13" r="0.6" fill="#fff"/>
+                        <circle cx="17" cy="13" r="0.6" fill="#fff"/>
+                    </symbol>
+
+                    <!-- X (Twitter) 图标 -->
+                    <symbol id="icon-x" viewBox="0 0 24 24">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
+                    </symbol>
+
+                    <!-- Facebook 图标 -->
+                    <symbol id="icon-facebook" viewBox="0 0 24 24">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" fill="currentColor"/>
+                    </symbol>
+
+                    <!-- 抖音 (TikTok) 图标 -->
+                    <symbol id="icon-tiktok" viewBox="0 0 24 24">
+                        <path d="M12.53.02C13.84 0 15.14.01 16.44 0c.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="currentColor"/>
+                    </symbol>
+
+                    <!-- YouTube 图标 -->
+                    <symbol id="icon-youtube" viewBox="0 0 24 24">
+                        <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="currentColor"/>
+                    </symbol>
+                </svg>
+            </div>
+            
+            <style>
+                .social-icon:hover {
+                    color: #333;
+                    background: rgba(255, 255, 255, 0.95);
+                    transform: translateY(-2px);
+                    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+                }
+            </style>
+            
+            <div class="social-icons-grid" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+                <a href="#" class="social-icon" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); color: #666; text-decoration: none; transition: all 0.3s ease;">
+                    <svg width="24" height="24">
+                        <use href="#icon-wechat"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); color: #666; text-decoration: none; transition: all 0.3s ease;">
+                    <svg width="24" height="24">
+                        <use href="#icon-tiktok"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); color: #666; text-decoration: none; transition: all 0.3s ease;">
+                    <svg width="24" height="24">
+                        <use href="#icon-youtube"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); color: #666; text-decoration: none; transition: all 0.3s ease;">
+                    <svg width="24" height="24">
+                        <use href="#icon-facebook"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); color: #666; text-decoration: none; transition: all 0.3s ease;">
+                    <svg width="24" height="24">
+                        <use href="#icon-x"/>
+                    </svg>
+                </a>
+                <a href="#" class="social-icon" style="display: flex; align-items: center; justify-content: center; width: 48px; height: 48px; border-radius: 50%; background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(10px); border: 1px solid rgba(0, 0, 0, 0.1); color: #666; text-decoration: none; transition: all 0.3s ease;">
+                    <svg width="24" height="24">
+                        <use href="#icon-instagram"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>© 2024 嘎巴星球. 保留所有权利. </p>
+    </footer>
+
+    <script src="../js/i18n-simple.js"></script>
+    <script src="../js/main.js"></script>
+    
+    <script>
+        // Simple fade-in animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationPlayState = 'running';
+                    }
+                });
+            });
+
+            document.querySelectorAll('.fade-in, .fade-in-delayed').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>
