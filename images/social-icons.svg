@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+  <!-- 小红书 (RED) 图标 -->
+  <symbol id="icon-xiaohongshu" viewBox="0 0 24 24">
+    <path d="M12 2L3 7v10c0 5.55 3.84 9 9 9s9-3.45 9-9V7l-9-5z" fill="currentColor"/>
+    <circle cx="8" cy="11" r="1.5" fill="#fff"/>
+    <circle cx="16" cy="11" r="1.5" fill="#fff"/>
+    <path d="M9 15h6" stroke="#fff" stroke-width="1.5" stroke-linecap="round"/>
+  </symbol>
+
+  <!-- Instagram 图标 -->
+  <symbol id="icon-instagram" viewBox="0 0 24 24">
+    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
+  </symbol>
+
+  <!-- 微信 (WeChat) 图标 -->
+  <symbol id="icon-wechat" viewBox="0 0 24 24">
+    <path d="M8.5 6C5.5 6 3 8.5 3 11.5c0 1.8.9 3.4 2.3 4.4L4.5 18l2.8-1.5c.7.2 1.4.3 2.2.3 3 0 5.5-2.5 5.5-5.5S11.5 6 8.5 6z" fill="currentColor"/>
+    <circle cx="6.5" cy="10.5" r="0.8" fill="#fff"/>
+    <circle cx="10.5" cy="10.5" r="0.8" fill="#fff"/>
+    <path d="M15.5 9c2.5 0 4.5 2 4.5 4.5s-2 4.5-4.5 4.5c-.5 0-1-.1-1.5-.2L12 19l.8-1.5c-1-.7-1.6-1.8-1.6-3C11.2 11.5 13.2 9 15.5 9z" fill="currentColor"/>
+    <circle cx="14" cy="13" r="0.6" fill="#fff"/>
+    <circle cx="17" cy="13" r="0.6" fill="#fff"/>
+  </symbol>
+
+  <!-- X (Twitter) 图标 -->
+  <symbol id="icon-x" viewBox="0 0 24 24">
+    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" fill="currentColor"/>
+  </symbol>
+</svg>

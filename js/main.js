@@ -1,22 +1,5 @@
-// 菜单按钮交互
+// 页面初始化
 document.addEventListener('DOMContentLoaded', function() {
-    const menuButton = document.getElementById('menuButton');
-    const closeMenu = document.getElementById('closeMenu');
-    const menuOverlay = document.getElementById('menuOverlay');
-    
-    // 打开菜单
-    if (menuButton) {
-        menuButton.addEventListener('click', function() {
-            menuOverlay.classList.add('active');
-        });
-    }
-    
-    // 关闭菜单
-    if (closeMenu) {
-        closeMenu.addEventListener('click', function() {
-            menuOverlay.classList.remove('active');
-        });
-    }
     
     // 轮换字幕（带淡入淡出效果）
     const rotatingTexts = document.querySelectorAll('.rotating-text span');
